@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.jhw.swing.notification'
+
+//mainClassName = 'com.jhw.personalization.Main'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    testCompile 'junit:junit:4.13'
+    
+    implementation project(':utils')
+    implementation project(':clean-core')
+    implementation project(':clean-swing')
+    
+    implementation project(':derivable-icons')
+    implementation project(':material-standards')
+    implementation project(':material-personalization')
+    implementation project(':material-swing')
+    
+    //timingframework
+    implementation 'net.java.timingframework:timingframework-swing:7.3.0'
+}

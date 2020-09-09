@@ -1,5 +1,6 @@
 package com.jhw.swing.notification.toast.types.notification;
 
+import com.jhw.swing.material.effects.DefaultElevationEffect;
 import com.jhw.swing.notification.toast.ToastComponent;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -23,11 +24,11 @@ import com.jhw.swing.utils.icons.DerivableIcon;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class NotificationToast extends ToastComponent {
+public class NotificationToast extends ToastComponent implements ElevationEffect {
 
     private final ElevationEffect elevation;
 
-    private int borderRadius = 5;
+    private double elevationShadow = 1;
 
     private String header = "";
 
@@ -45,8 +46,8 @@ public class NotificationToast extends ToastComponent {
 
     public NotificationToast(ImageIcon icon, String header, Font headerFont, String text, Font textFont, Color background) {
         super.setCursor(cursor);
-        elevation = ElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
-        elevation.setBorderRadius(borderRadius);
+        elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
+        setBorderRadius(5);
 
         this.setBackground(background);
 
@@ -60,13 +61,37 @@ public class NotificationToast extends ToastComponent {
 
     public NotificationToast(String text, ImageIcon icon, Color color) {
         super.setCursor(cursor);
-        elevation = ElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
-        elevation.setBorderRadius(borderRadius);
+        elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
+        setBorderRadius(5);
 
         this.setBackground(color);
 
         setIcon(icon);
         setText(text);
+    }
+
+    @Override
+    public int getBorderRadius() {
+        return elevation.getBorderRadius();
+    }
+
+    @Override
+    public double getLevel() {
+        return elevation.getLevel();
+    }
+
+    @Override
+    public double getElevation() {
+        return elevationShadow;
+    }
+
+    @Override
+    public void paintElevation(Graphics2D gd) {
+        elevation.paintElevation(gd);
+    }
+
+    public void setElevationShadow(double elevationShadow) {
+        this.elevationShadow = elevationShadow;
     }
 
     public void setIcon(ImageIcon icon) {
@@ -86,13 +111,9 @@ public class NotificationToast extends ToastComponent {
         updateSize();
     }
 
-    public void setElevationLevel(int level) {
-        elevation.setLevel(level);
-    }
-
+    @Override
     public void setBorderRadius(int border) {
-        this.borderRadius = border;
-        elevation.setBorderRadius(borderRadius);
+        elevation.setBorderRadius(border);
     }
 
     @Override
@@ -138,13 +159,13 @@ public class NotificationToast extends ToastComponent {
 
 //---------------------BACKGROUND-----------------------------------
         //Paint MaterialPanel background
-        elevation.paint(g2);
+        paintElevation(g2);
         g2.translate(MaterialShadow.OFFSET_LEFT, MaterialShadow.OFFSET_TOP);
 
         final int offset_lr = MaterialShadow.OFFSET_LEFT + MaterialShadow.OFFSET_RIGHT;
         final int offset_td = MaterialShadow.OFFSET_TOP + MaterialShadow.OFFSET_BOTTOM;
         g2.setColor(getBackground());
-        g2.fill(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, borderRadius * 2, borderRadius * 2));
+        g2.fill(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, getBorderRadius() * 2, getBorderRadius() * 2));
         g2.setClip(null);
 
         g2.translate(-MaterialShadow.OFFSET_LEFT, -MaterialShadow.OFFSET_TOP);

@@ -1,5 +1,6 @@
 package com.jhw.swing.notification.fade;
 
+import com.jhw.swing.material.components.button.MaterialButtonsFactory;
 import com.jhw.swing.material.components.textarea._ContentArea;
 import com.jhw.swing.material.components.button._MaterialButtonIconTransparent;
 import com.jhw.swing.material.components.container.panel._MaterialPanel;
@@ -8,6 +9,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import com.jhw.swing.material.standards.MaterialIcons;
+import javax.swing.JButton;
 
 /**
  *
@@ -53,7 +55,7 @@ public class NotificationPanel extends _MaterialPanel {
     private void initComponents() {
 
         labelIcon = new com.jhw.swing.material.components.labels._MaterialLabel();
-        buttonClose = new com.jhw.swing.material.components.button._MaterialButtonIconTransparent();
+        buttonClose = MaterialButtonsFactory.buildIconTransparent();
         contentArea = new com.jhw.swing.material.components.textarea._ContentArea();
 
         setBorderRadius(3);
@@ -95,7 +97,7 @@ public class NotificationPanel extends _MaterialPanel {
     }// </editor-fold>                        
 
     // Variables declaration - do not modify//:variables
-    private com.jhw.swing.material.components.button._MaterialButtonIconTransparent buttonClose;
+    private JButton buttonClose;
     private com.jhw.swing.material.components.textarea._ContentArea contentArea;
     private com.jhw.swing.material.components.labels._MaterialLabel labelIcon;
     // End of variables declaration                   
@@ -108,7 +110,7 @@ public class NotificationPanel extends _MaterialPanel {
         this.labelIcon = _MaterialLabel1;
     }
 
-    public _MaterialButtonIconTransparent getMaterialIconButtonTranspRect1() {
+    public JButton getMaterialIconButtonTranspRect1() {
         return buttonClose;
     }
 
@@ -116,7 +118,7 @@ public class NotificationPanel extends _MaterialPanel {
         this.buttonClose = _MaterialIconButtonTranspRect1;
     }
 
-    public _MaterialButtonIconTransparent getButtonClose() {
+    public JButton getButtonClose() {
         return buttonClose;
     }
 

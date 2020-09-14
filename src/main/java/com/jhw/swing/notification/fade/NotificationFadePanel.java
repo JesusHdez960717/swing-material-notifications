@@ -11,15 +11,14 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import com.jhw.swing.material.standards.MaterialIcons;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 
 /**
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
+@Deprecated
 public class NotificationFadePanel extends _MaterialPanelComponent {
 
     public NotificationFadePanel(String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color) {

@@ -11,7 +11,7 @@ import javax.swing.Timer;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.notification.NotificationLocation;
 import static com.jhw.swing.notification.toast.ToastDisplayer.DURATION;
-import static com.jhw.swing.notification.toast.types.text.DialogTextToastGeneral.DISTANCE;
+import static com.jhw.swing.notification.toast.types.text.ToastTextGeneral.DISTANCE;
 import com.jhw.swing.util.SafePropertySetter;
 import com.jhw.swing.util.Utils;
 import java.awt.BorderLayout;
@@ -36,6 +36,7 @@ public class DialogToast extends JDialog {
     public static DialogToast from(int duration, ToastComponent toast, int location) {
         return new DialogToast(duration, toast, location);
     }
+    
     //control de flujo e interaccion entre las notificaciones
     private Animator anim;//animator para mover cuando la de abajo se cierra
     private int nextY = 0;//y donde va a salir la proxima notificacion 
@@ -51,7 +52,7 @@ public class DialogToast extends JDialog {
     public static final int DISTANCE = 65;
 
     //panel base de la notificacion, un panel por notificacion
-    private final ToastPanelBack basePanel;
+    private final ToastDisplayer basePanel;
 
     //el toast como tal
     private final ToastComponent toast;
@@ -75,7 +76,7 @@ public class DialogToast extends JDialog {
         this.toast = toast;
         this.duration = 1000 * duration;
         this.location = location;
-        this.basePanel = new ToastPanelBack(this.duration);
+        this.basePanel = new ToastDisplayer(this.duration);
 
         this.setUndecorated(true);
         this.setBackground(MaterialColors.TRANSPARENT);
@@ -88,7 +89,7 @@ public class DialogToast extends JDialog {
         this.setResizable(false);
 
         this.setVisible(true);
-        this.basePanel.displayToast(this.toast);
+        this.basePanel.display(this.toast);
 
         this.nextY = getYPosition() - (int) super.getSize().getHeight();
         this.setLocation(NotificationLocation.getXPosition(this, location), nextY);

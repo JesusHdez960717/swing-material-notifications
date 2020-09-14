@@ -20,13 +20,15 @@ import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.util.Utils;
 
 /**
+ * Usar TOAST
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class NotificationFadeDialogGeneral extends JDialog {
+@Deprecated
+public class DialogFade extends JDialog {
 
-    public static NotificationFadeDialogGeneral from(NotificationBuilder.builder builder) {
-        return new NotificationFadeDialogGeneral(builder.delaySeconds, builder.header, builder.headerFont, builder.text, builder.textFont, builder.icon, builder.color, builder.location);
+    public static DialogFade from(NotificationBuilder.builder builder) {
+        return new DialogFade(builder.delaySeconds, builder.header, builder.headerFont, builder.text, builder.textFont, builder.icon, builder.color, builder.location);
     }
 
     public static final int DURATION_FADE = 150;
@@ -38,11 +40,11 @@ public class NotificationFadeDialogGeneral extends JDialog {
 
     private Animator anim;
 
-    private static final ArrayList<NotificationFadeDialogGeneral> NOTIF = new ArrayList<>();
+    private static final ArrayList<DialogFade> NOTIF = new ArrayList<>();
 
     private int nextY = 0;
 
-    public NotificationFadeDialogGeneral(int delaySeconds, String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color, int location) {
+    public DialogFade(int delaySeconds, String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color, int location) {
         super();
         int delay = delaySeconds * 1000;
 
@@ -62,7 +64,7 @@ public class NotificationFadeDialogGeneral extends JDialog {
         nextY = getYPosition() - (int) super.getSize().getHeight();
         this.setLocation(NotificationLocation.getXPosition(this, location), nextY);
 
-        NotificationFadeDialogGeneral act = this;
+        DialogFade act = this;
 
         act.setOpacity(0f);
         new Animator.Builder(Utils.getSwingTimerTimingSource())
@@ -123,14 +125,14 @@ public class NotificationFadeDialogGeneral extends JDialog {
 
     private int getYPosition() {
         int pos = Toolkit.getDefaultToolkit().getScreenSize().height - DISTANCE;
-        for (NotificationFadeDialogGeneral act : NOTIF) {
+        for (DialogFade act : NOTIF) {
             pos -= act.getHeight();
         }
         return pos;
     }
 
-    private static void moveAll(NotificationFadeDialogGeneral actual) {
-        for (NotificationFadeDialogGeneral act : NOTIF) {
+    private static void moveAll(DialogFade actual) {
+        for (DialogFade act : NOTIF) {
             if (act.getLocation().getY() < actual.getLocation().getY()) {
                 act.moveAmount((int) actual.getSize().getHeight());
             }

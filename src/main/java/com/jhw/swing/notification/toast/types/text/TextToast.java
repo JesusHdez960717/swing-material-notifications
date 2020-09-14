@@ -3,7 +3,7 @@ package com.jhw.swing.notification.toast.types.text;
 import com.jhw.swing.notification.toast.ToastComponent;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
-import com.jhw.swing.material.effects.ElevationEffect;
+import com.jhw.swing.material.effects.*;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialFontRoboto;
 import com.jhw.swing.material.standards.MaterialShadow;
@@ -17,14 +17,17 @@ import com.jhw.swing.util.Utils;
  * href="https://www.google.com/design/spec/components/snackbars-toasts.html">Snackbars
  * and toasts</a>
  */
-public class TextToast extends ToastComponent {
+public class TextToast extends ToastComponent implements ElevationEffect {
 
-    private final static float TRANS = 0.8f;
+    private final static float OPACITY = 0.8f;
+
     private final ElevationEffect elevation;
 
     private String textDisplay;
 
     private int borderRadius = 15;
+
+    private double elevationShadow = 1;
 
     private Cursor cursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
 
@@ -33,27 +36,44 @@ public class TextToast extends ToastComponent {
      *
      * @param text the textDisplay of this toast
      */
-    public TextToast(String text) {
+    public TextToast(String text, Font textFont, Color color) {
         super.setCursor(cursor);
-        elevation = ElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
+
+        elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
         elevation.setBorderRadius(borderRadius);
-        this.setBackground(MaterialColors.GREY_900);
+        //elevation.setOpacity(OPACITY);
+
+        this.setBackground(color);
         this.setFont(MaterialFontRoboto.REGULAR.deriveFont(18f));
         setTextDisplay(text);
     }
 
-    public String getTextDisplay() {
-        return textDisplay;
+    @Override
+    public double getLevel() {
+        return elevation.getLevel();
     }
 
+    @Override
+    public double getElevation() {
+        return elevationShadow;
+    }
+
+    @Override
+    public void paintElevation(Graphics2D g2) {
+        elevation.paintElevation(g2);
+    }
+
+    @Override
     public int getBorderRadius() {
         return borderRadius;
     }
 
+    @Override
     public Cursor getCursor() {
         return cursor;
     }
 
+    @Override
     public void setCursor(Cursor cursor) {
         this.cursor = cursor;
     }
@@ -86,10 +106,7 @@ public class TextToast extends ToastComponent {
         return textDisplay;
     }
 
-    public void setElevationLevel(int level) {
-        elevation.setLevel(level);
-    }
-
+    @Override
     public void setBorderRadius(int border) {
         this.borderRadius = border;
         elevation.setBorderRadius(borderRadius);
@@ -101,7 +118,7 @@ public class TextToast extends ToastComponent {
         Graphics2D g2 = MaterialDrawingUtils.getAliasedGraphics(g);
 //---------------------BACKGROUND-----------------------------------
         //Paint MaterialPanel background
-        elevation.paint(g2);
+        paintElevation(g2);
         g2.translate(MaterialShadow.OFFSET_LEFT, MaterialShadow.OFFSET_TOP);
 
         final int offset_lr = MaterialShadow.OFFSET_LEFT + MaterialShadow.OFFSET_RIGHT;
@@ -122,7 +139,7 @@ public class TextToast extends ToastComponent {
     }
 
     private Color backTranslucid() {
-        int alpha = (int) (255 * TRANS);
+        int alpha = (int) (255 * OPACITY);
         return new Color(getBackground().getRed(), getBackground().getGreen(), getBackground().getBlue(), alpha);
     }
 }

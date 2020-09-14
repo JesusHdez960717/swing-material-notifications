@@ -6,21 +6,16 @@
 package com.jhw.swing.notification.examples;
 
 import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.material.components.textfield.MaterialFormatedTextField;
-import com.jhw.swing.material.components.textfield.MaterialTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextField;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.notification.NotificationBuilder;
-import com.jhw.swing.notification.fade.DialogFade;
+import com.jhw.swing.notification.NotificationFactory;
 import com.jhw.swing.notification.toast.types.notification.ToastNotificationGeneral;
 import com.jhw.swing.notification.toast.types.text.ToastTextGeneral;
 import com.jhw.swing.ui.MaterialLookAndFeel;
-import com.jhw.utils.formateer.MoneyFormateer;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.math.BigDecimal;
 import java.util.Random;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -45,13 +40,13 @@ public class EXAMPLE_TOAST extends javax.swing.JFrame {
         vlc.add(new JButton(new AbstractAction("toast natification") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ToastNotificationGeneral.from(NotificationBuilder.builder().header("buajajaja").text("texting texting hua hua hua").color(MaterialColors.PURPLE_400).icon(MaterialIcons.BACKUP));
+                NotificationFactory.buildNotificationTOAST(NotificationBuilder.builder().header("buajajaja").text("texting texting hua hua hua").color(MaterialColors.PURPLE_400).icon(MaterialIcons.BACKUP));
             }
         }));
         vlc.add(new JButton(new AbstractAction("toast text") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ToastTextGeneral.from(NotificationBuilder.builder().location(new Random().nextInt(3)).text("texting texting hua hua hua").color(MaterialColors.GREY_900).icon(MaterialIcons.PALETTE));
+                NotificationFactory.buildTextTOAST(NotificationBuilder.builder().location(new Random().nextInt(3)).text("texting texting hua hua hua").color(MaterialColors.GREY_900).icon(MaterialIcons.PALETTE));
             }
         }));
         jPanel1.add(vlc.build());

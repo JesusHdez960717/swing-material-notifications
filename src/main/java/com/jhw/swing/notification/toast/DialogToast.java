@@ -13,9 +13,8 @@ import com.jhw.swing.material.standards.MaterialColors;
  * Dialogo vacio que muestra un panel.<br/>
  * Si NO tiene titulo se undecora.
  *
- * Ejemplo: new DialogToast("123", new EmptyPanel());
  *
- * @author Jesús Hernandez Barrios (jhernandezb96@gmail.com) 26/02/2020 00:08
+ * @author Jesús Hernandez Barrios (jhernandezb96@gmail.com)
  */
 public class DialogToast extends JDialog {
 

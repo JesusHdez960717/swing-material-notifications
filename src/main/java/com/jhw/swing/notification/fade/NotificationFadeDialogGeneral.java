@@ -17,54 +17,35 @@ import com.jhw.swing.material.standards.MaterialFontRoboto;
 import com.jhw.swing.notification.NotificationLocation;
 import com.jhw.personalization.core.domain.Personalization;
 import com.jhw.personalization.services.PersonalizationHandler;
+import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.util.Utils;
 
 /**
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class NotificationDialogGeneral extends JDialog {
+public class NotificationFadeDialogGeneral extends JDialog {
 
     public static final int DURATION_FADE = 150;
     public static final int DURATION_MOVE = 250;
 
-    private int delay; //milliseconds
-    private ImageIcon icon;
-    private Color backgroundColor;
-
-    private NotificationPanel basePanel;
-
-    public static final Font DEFAULT_HEADER_FONT = MaterialFontRoboto.BOLD.deriveFont(18f);
-    public static final Font DEFAULT_TEXT_FONT = MaterialFontRoboto.BOLD.deriveFont(16f);
+    private NotificationFadePanel basePanel;
 
     public static final int DISTANCE = 65;
 
     private Animator anim;
 
-    private static final ArrayList<NotificationDialogGeneral> NOTIF = new ArrayList<>();
+    private static final ArrayList<NotificationFadeDialogGeneral> NOTIF = new ArrayList<>();
 
     private int nextY = 0;
 
-    public NotificationDialogGeneral(int delaySeconds, String text, ImageIcon icon, Color color) {
-        this(delaySeconds, "", text, icon, color);
-    }
-
-    public NotificationDialogGeneral(int delaySeconds, String header, String text, ImageIcon icon, Color color) {
-        this(delaySeconds, header, DEFAULT_HEADER_FONT, text, DEFAULT_TEXT_FONT, icon, color, NotificationLocation.DOWN_RIGHT);
-    }
-
-    public NotificationDialogGeneral(int delaySeconds, String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color, int location) {
+    public NotificationFadeDialogGeneral(int delaySeconds, String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color, int location) {
         super();
-        this.delay = delaySeconds * 1000;
-        this.icon = icon;
-        this.backgroundColor = color;
+        int delay = delaySeconds * 1000;
 
-        this.basePanel = new NotificationPanel(header, headerFont, text, textFont, this.icon, this.backgroundColor);
-        basePanel.getMaterialIconButtonTranspRect1().addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                closeNotif();
-            }
+        this.basePanel = new NotificationFadePanel(header, headerFont, text, textFont, icon, color);
+        basePanel.addCloseActionListener((java.awt.event.ActionEvent evt) -> {
+            closeNotif();
         });
 
         this.setLayout(new GridLayout(1, 1));
@@ -78,7 +59,7 @@ public class NotificationDialogGeneral extends JDialog {
         nextY = getYPosition() - (int) super.getSize().getHeight();
         this.setLocation(NotificationLocation.getXPosition(this, location), nextY);
 
-        NotificationDialogGeneral act = this;
+        NotificationFadeDialogGeneral act = this;
 
         act.setOpacity(0f);
         new Animator.Builder(Utils.getSwingTimerTimingSource())
@@ -139,14 +120,14 @@ public class NotificationDialogGeneral extends JDialog {
 
     private int getYPosition() {
         int pos = Toolkit.getDefaultToolkit().getScreenSize().height - DISTANCE;
-        for (NotificationDialogGeneral act : NOTIF) {
+        for (NotificationFadeDialogGeneral act : NOTIF) {
             pos -= act.getHeight();
         }
         return pos;
     }
 
-    private static void moveAll(NotificationDialogGeneral actual) {
-        for (NotificationDialogGeneral act : NOTIF) {
+    private static void moveAll(NotificationFadeDialogGeneral actual) {
+        for (NotificationFadeDialogGeneral act : NOTIF) {
             if (act.getLocation().getY() < actual.getLocation().getY()) {
                 act.moveAmount((int) actual.getSize().getHeight());
             }
@@ -165,50 +146,6 @@ public class NotificationDialogGeneral extends JDialog {
         }
     }
 
-    public int getDelay() {
-        return delay;
-    }
-
-    public ImageIcon getIcon() {
-        return icon;
-    }
-
-    public Color getBackgroundColor() {
-        return backgroundColor;
-    }
-
-    public String getHeader() {
-        return basePanel.getContentArea().getHeader();
-    }
-
-    public void setHeader(String header) {
-        basePanel.getContentArea().setHeader(header);
-    }
-
-    public Font getHeaderFont() {
-        return basePanel.getContentArea().getHeaderFont();
-    }
-
-    public void setHeaderFont(Font headerFont) {
-        basePanel.getContentArea().setHeaderFont(headerFont);
-    }
-
-    public String getText() {
-        return basePanel.getContentArea().getText();
-    }
-
-    public void setText(String text) {
-        basePanel.getContentArea().setHeader(text);
-    }
-
-    public Font getTextFont() {
-        return basePanel.getContentArea().getTextFont();
-    }
-
-    public void setTextFont(Font textFont) {
-        basePanel.getContentArea().setTextFont(textFont);
-    }
-
     private void doMoveAnimated(int nextY) {
         anim = new Animator.Builder(Utils.getSwingTimerTimingSource())
                 .setDuration(DURATION_MOVE, TimeUnit.MILLISECONDS)
@@ -222,6 +159,66 @@ public class NotificationDialogGeneral extends JDialog {
                     }
                 }, getLocation().y, nextY)).build();
         anim.start();
+    }
+
+    public static builder builder() {
+        return new builder();
+    }
+
+    public static class builder {
+
+        private int delaySeconds = 3;
+        private String header = "header";
+        private Font headerFont = MaterialFontRoboto.BOLD.deriveFont(18f);
+        private String text = "text";
+        private Font textFont = MaterialFontRoboto.BOLD.deriveFont(16f);
+        private ImageIcon icon = MaterialIcons.NOTIFICATIONS;
+        private Color color = MaterialColors.WHITE;
+        private int location = NotificationLocation.DOWN_RIGHT;
+
+        public builder delaySeconds(int delaySeconds) {
+            this.delaySeconds = delaySeconds;
+            return this;
+        }
+
+        public builder header(String header) {
+            this.header = header;
+            return this;
+        }
+
+        public builder headerFont(Font headerFont) {
+            this.headerFont = headerFont;
+            return this;
+        }
+
+        public builder text(String text) {
+            this.text = text;
+            return this;
+        }
+
+        public builder textFont(Font textFont) {
+            this.textFont = textFont;
+            return this;
+        }
+
+        public builder icon(ImageIcon icon) {
+            this.icon = icon;
+            return this;
+        }
+
+        public builder color(Color color) {
+            this.color = color;
+            return this;
+        }
+
+        public builder location(int location) {
+            this.location = location;
+            return this;
+        }
+
+        public NotificationFadeDialogGeneral build() {
+            return new NotificationFadeDialogGeneral(delaySeconds, header, headerFont, text, textFont, icon, color, location);
+        }
     }
 
 }

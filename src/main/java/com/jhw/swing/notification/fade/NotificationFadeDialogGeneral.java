@@ -13,11 +13,10 @@ import org.jdesktop.core.animation.timing.TimingTargetAdapter;
 import org.jdesktop.core.animation.timing.interpolators.SplineInterpolator;
 import com.jhw.swing.util.SafePropertySetter;
 import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
 import com.jhw.swing.notification.NotificationLocation;
 import com.jhw.personalization.core.domain.Personalization;
 import com.jhw.personalization.services.PersonalizationHandler;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.util.Utils;
 
 /**
@@ -25,6 +24,10 @@ import com.jhw.swing.util.Utils;
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
 public class NotificationFadeDialogGeneral extends JDialog {
+
+    public static NotificationFadeDialogGeneral from(NotificationBuilder.builder builder) {
+        return new NotificationFadeDialogGeneral(builder.delaySeconds, builder.header, builder.headerFont, builder.text, builder.textFont, builder.icon, builder.color, builder.location);
+    }
 
     public static final int DURATION_FADE = 150;
     public static final int DURATION_MOVE = 250;
@@ -159,66 +162,6 @@ public class NotificationFadeDialogGeneral extends JDialog {
                     }
                 }, getLocation().y, nextY)).build();
         anim.start();
-    }
-
-    public static builder builder() {
-        return new builder();
-    }
-
-    public static class builder {
-
-        private int delaySeconds = 3;
-        private String header = "header";
-        private Font headerFont = MaterialFontRoboto.BOLD.deriveFont(18f);
-        private String text = "text";
-        private Font textFont = MaterialFontRoboto.BOLD.deriveFont(16f);
-        private ImageIcon icon = MaterialIcons.NOTIFICATIONS;
-        private Color color = MaterialColors.WHITE;
-        private int location = NotificationLocation.DOWN_RIGHT;
-
-        public builder delaySeconds(int delaySeconds) {
-            this.delaySeconds = delaySeconds;
-            return this;
-        }
-
-        public builder header(String header) {
-            this.header = header;
-            return this;
-        }
-
-        public builder headerFont(Font headerFont) {
-            this.headerFont = headerFont;
-            return this;
-        }
-
-        public builder text(String text) {
-            this.text = text;
-            return this;
-        }
-
-        public builder textFont(Font textFont) {
-            this.textFont = textFont;
-            return this;
-        }
-
-        public builder icon(ImageIcon icon) {
-            this.icon = icon;
-            return this;
-        }
-
-        public builder color(Color color) {
-            this.color = color;
-            return this;
-        }
-
-        public builder location(int location) {
-            this.location = location;
-            return this;
-        }
-
-        public NotificationFadeDialogGeneral build() {
-            return new NotificationFadeDialogGeneral(delaySeconds, header, headerFont, text, textFont, icon, color, location);
-        }
     }
 
 }

@@ -11,7 +11,9 @@ import com.jhw.swing.material.components.textfield.MaterialTextAreaFactory;
 import com.jhw.swing.material.components.textfield.MaterialTextField;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialIcons;
+import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.notification.fade.NotificationFadeDialogGeneral;
+import com.jhw.swing.notification.toast.types.notification.DialogNotificationToastGeneral;
 import com.jhw.swing.ui.MaterialLookAndFeel;
 import com.jhw.utils.formateer.MoneyFormateer;
 import java.awt.BorderLayout;
@@ -41,6 +43,7 @@ public class EXAMPLE_TOAST extends javax.swing.JFrame {
         vlc.add(new JButton(new AbstractAction("Fade 1") {
             @Override
             public void actionPerformed(ActionEvent e) {
+                DialogNotificationToastGeneral.from(NotificationBuilder.builder().header("buajajaja").text("texting texting hua hua hua").color(MaterialColors.PURPLE_400).icon(MaterialIcons.BACKUP));
             }
         }));
         jPanel1.add(vlc.build());

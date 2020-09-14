@@ -44,32 +44,22 @@ public class NotificationToast extends ToastComponent implements ElevationEffect
 
     private Cursor cursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
 
-    public NotificationToast(ImageIcon icon, String header, Font headerFont, String text, Font textFont, Color background) {
+    public NotificationToast(String header, Font headerFont, String text, Font textFont, Color background, ImageIcon icon) {
         super.setCursor(cursor);
-        elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
-        setBorderRadius(5);
+        
+        this.elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
+        this.setBorderRadius(5);
 
         this.setBackground(background);
 
-        setIcon(icon);
+        this.setIcon(icon);
 
         this.headerFont = headerFont;
         this.textFont = textFont;
-        setText(text);
-        setHeader(text);
+        this.setText(text);
+        this.setHeader(text);
     }
-
-    public NotificationToast(String text, ImageIcon icon, Color color) {
-        super.setCursor(cursor);
-        elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
-        setBorderRadius(5);
-
-        this.setBackground(color);
-
-        setIcon(icon);
-        setText(text);
-    }
-
+    
     @Override
     public int getBorderRadius() {
         return elevation.getBorderRadius();
@@ -223,14 +213,6 @@ public class NotificationToast extends ToastComponent implements ElevationEffect
 
     public void setTextDim(Dimension textDim) {
         this.textDim = textDim;
-    }
-
-    public Cursor getCursor() {
-        return cursor;
-    }
-
-    public void setCursor(Cursor cursor) {
-        this.cursor = cursor;
     }
 
 }

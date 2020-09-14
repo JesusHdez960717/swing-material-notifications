@@ -15,13 +15,19 @@ import org.jdesktop.core.animation.timing.interpolators.SplineInterpolator;
 import com.jhw.swing.util.SafePropertySetter;
 import com.jhw.personalization.core.domain.Personalization;
 import com.jhw.personalization.services.PersonalizationHandler;
+import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.util.Utils;
+import java.awt.Font;
 
 /**
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
 public class DialogNotificationToastGeneral extends DialogToast {
+
+    public static DialogNotificationToastGeneral from(NotificationBuilder.builder builder) {
+        return new DialogNotificationToastGeneral(builder.delaySeconds, builder.header, builder.headerFont, builder.text, builder.textFont, builder.icon, builder.color, builder.location);
+    }
 
     public static final int DISTANCE = 65;
 
@@ -31,16 +37,8 @@ public class DialogNotificationToastGeneral extends DialogToast {
 
     private int nextY = 0;
 
-    public DialogNotificationToastGeneral(int duration, String text, ImageIcon icon, Color back) {
-        this(duration, text, icon, back, NotificationLocation.DOWN_RIGHT);
-    }
-
-    public static DialogNotificationToastGeneral from(int duration, String text, ImageIcon icon, Color back) {
-        return new DialogNotificationToastGeneral(duration, text, icon, back);
-    }
-
-    public DialogNotificationToastGeneral(int duration, String text, ImageIcon icon, Color back, int location) {
-        super(duration, new NotificationToast(text, icon, back));
+    public DialogNotificationToastGeneral(int delaySeconds, String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color, int location) {
+        super(delaySeconds * 1000, new NotificationToast(header, headerFont, text, textFont, color, icon));
 
         nextY = getYPosition() - (int) super.getSize().getHeight();
         this.setLocation(NotificationLocation.getXPosition(this, location), nextY);

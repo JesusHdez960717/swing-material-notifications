@@ -19,9 +19,14 @@ public class NotificationLocation {
                 return 0;
             case DOWN_RIGHT:
                 return (int) (Utils.getScreenSize().getWidth() - component.getSize().getWidth());
-            default:
+            case DOWN_CENTER:
                 return (int) (Utils.getScreenSize().getWidth() - component.getSize().getWidth()) / 2;
+            default:
+                throw new IndexOutOfBoundsException("The location isn't supported at this moment");
         }
     }
 
+    public static int[] locations() {
+        return new int[]{DOWN_LEFT, DOWN_CENTER, DOWN_RIGHT};
+    }
 }

@@ -21,6 +21,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.math.BigDecimal;
+import java.util.Random;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.UIManager;
@@ -50,7 +51,7 @@ public class EXAMPLE_TOAST extends javax.swing.JFrame {
         vlc.add(new JButton(new AbstractAction("toast text") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DialogTextToastGeneral.from(NotificationBuilder.builder().text("texting texting hua hua hua").color(MaterialColors.GREY_900).icon(MaterialIcons.PALETTE));
+                DialogTextToastGeneral.from(NotificationBuilder.builder().location(new Random().nextInt(3)).text("texting texting hua hua hua").color(MaterialColors.GREY_900).icon(MaterialIcons.PALETTE));
             }
         }));
         jPanel1.add(vlc.build());

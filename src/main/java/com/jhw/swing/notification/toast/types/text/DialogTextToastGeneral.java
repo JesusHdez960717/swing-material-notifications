@@ -12,8 +12,12 @@ import org.jdesktop.core.animation.timing.Animator;
 import org.jdesktop.core.animation.timing.interpolators.SplineInterpolator;
 import com.jhw.personalization.core.domain.Personalization;
 import com.jhw.personalization.services.PersonalizationHandler;
+import com.jhw.swing.notification.NotificationBuilder;
+import com.jhw.swing.notification.toast.types.notification.DialogNotificationToastGeneral;
 import com.jhw.swing.util.SafePropertySetter;
 import com.jhw.swing.util.Utils;
+import java.awt.Color;
+import java.awt.Font;
 
 /**
  *
@@ -21,6 +25,9 @@ import com.jhw.swing.util.Utils;
  */
 public class DialogTextToastGeneral extends DialogToast {
 
+    public static DialogTextToastGeneral from(NotificationBuilder.builder builder) {
+        return new DialogTextToastGeneral(builder.delaySeconds, builder.text, builder.textFont, builder.color, builder.location);
+    }
     public static final int DISTANCE = 65;
 
     private Animator anim;
@@ -29,12 +36,8 @@ public class DialogTextToastGeneral extends DialogToast {
 
     private int nextY = 0;
 
-    public DialogTextToastGeneral(int duration, String text) {
-        this(duration, text, NotificationLocation.DOWN_CENTER);
-    }
-
-    public DialogTextToastGeneral(int duration, String text, int location) {
-        super(duration, new TextToast(text));
+    public DialogTextToastGeneral(int duration, String text, Font textFont, Color color, int location) {
+        super(duration, new TextToast(text, textFont, color));
 
         nextY = getYPosition() - (int) super.getSize().getHeight();
         this.setLocation(NotificationLocation.getXPosition(this, location), nextY);

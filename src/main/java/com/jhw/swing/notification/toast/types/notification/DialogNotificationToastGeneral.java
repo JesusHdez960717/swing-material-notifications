@@ -16,6 +16,9 @@ import com.jhw.swing.util.SafePropertySetter;
 import com.jhw.personalization.core.domain.Personalization;
 import com.jhw.personalization.services.PersonalizationHandler;
 import com.jhw.swing.notification.NotificationBuilder;
+import static com.jhw.swing.notification.toast.ToastDisplayer.DURATION;
+import com.jhw.swing.notification.toast.types.text.DialogTextToastGeneral;
+import static com.jhw.swing.notification.toast.types.text.DialogTextToastGeneral.DISTANCE;
 import com.jhw.swing.util.Utils;
 import java.awt.Font;
 
@@ -38,7 +41,7 @@ public class DialogNotificationToastGeneral extends DialogToast {
     private int nextY = 0;
 
     public DialogNotificationToastGeneral(int delaySeconds, String header, Font headerFont, String text, Font textFont, ImageIcon icon, Color color, int location) {
-        super(delaySeconds * 1000, new NotificationToast(header, headerFont, text, textFont, color, icon));
+        super(delaySeconds, new NotificationToast(header, headerFont, text, textFont, color, icon));
 
         nextY = getYPosition() - (int) super.getSize().getHeight();
         this.setLocation(NotificationLocation.getXPosition(this, location), nextY);
@@ -74,7 +77,7 @@ public class DialogNotificationToastGeneral extends DialogToast {
     private static void moveAll(DialogNotificationToastGeneral actual) {
         for (DialogNotificationToastGeneral act : NOTIF) {
             if (act.getLocation().getY() < actual.getLocation().getY()) {
-                act.moveAmount((int) (actual.getSize().getHeight()));
+                act.moveAmount((int) actual.getSize().getHeight());
             }
         }
     }
@@ -99,7 +102,7 @@ public class DialogNotificationToastGeneral extends DialogToast {
                     @Override
                     public void setValue(Integer value) {
                         if (value != null) {
-                            setLocation(getLocation().x, value);//mantiene x y mueve y
+                            setLocation(getLocation().x, value);
                         }
                     }
                 }, getLocation().y, nextY)).build();

@@ -36,14 +36,14 @@ public class TextToast extends ToastComponent implements ElevationEffect {
      *
      * @param text the textDisplay of this toast
      */
-    public TextToast(String text) {
+    public TextToast(String text, Font textFont, Color color) {
         super.setCursor(cursor);
+
         elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
+        elevation.setBorderRadius(borderRadius);
+        //elevation.setOpacity(OPACITY);
 
-        ((DefaultElevationEffect) elevation).setBorderRadius(borderRadius);
-        ((DefaultElevationEffect) elevation).setOpacity(OPACITY);
-
-        this.setBackground(MaterialColors.GREY_900);
+        this.setBackground(color);
         this.setFont(MaterialFontRoboto.REGULAR.deriveFont(18f));
         setTextDisplay(text);
     }
@@ -63,22 +63,17 @@ public class TextToast extends ToastComponent implements ElevationEffect {
         elevation.paintElevation(g2);
     }
 
-    public String getTextDisplay() {
-        return textDisplay;
-    }
-
-    public void setElevationShadow(double elevationShadow) {
-        this.elevationShadow = elevationShadow;
-    }
-
+    @Override
     public int getBorderRadius() {
         return borderRadius;
     }
 
+    @Override
     public Cursor getCursor() {
         return cursor;
     }
 
+    @Override
     public void setCursor(Cursor cursor) {
         this.cursor = cursor;
     }
@@ -111,9 +106,10 @@ public class TextToast extends ToastComponent implements ElevationEffect {
         return textDisplay;
     }
 
+    @Override
     public void setBorderRadius(int border) {
         this.borderRadius = border;
-        ((DefaultElevationEffect) elevation).setBorderRadius(borderRadius);//TODO
+        elevation.setBorderRadius(borderRadius);
     }
 
     @Override

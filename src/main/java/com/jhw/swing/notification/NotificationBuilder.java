@@ -26,9 +26,9 @@ public class NotificationBuilder {
     public static class builder {
 
         public int delaySeconds = 3;
-        public String header = "header";
+        public String header = "";
         public Font headerFont = MaterialFontRoboto.BOLD.deriveFont(18f);
-        public String text = "text";
+        public String text = "";
         public Font textFont = MaterialFontRoboto.BOLD.deriveFont(16f);
         public ImageIcon icon = MaterialIcons.NOTIFICATIONS;
         public Color color = MaterialColors.WHITE;

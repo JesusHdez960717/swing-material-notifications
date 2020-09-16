@@ -6,19 +6,14 @@
 package com.jhw.swing.notification.examples;
 
 import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.material.components.textfield.MaterialFormatedTextField;
-import com.jhw.swing.material.components.textfield.MaterialTextAreaFactory;
-import com.jhw.swing.material.components.textfield.MaterialTextField;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.material.standards.MaterialIcons;
 import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.notification.fade.DialogFade;
 import com.jhw.swing.ui.MaterialLookAndFeel;
-import com.jhw.utils.formateer.MoneyFormateer;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.math.BigDecimal;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.UIManager;

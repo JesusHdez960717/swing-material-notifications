@@ -57,7 +57,7 @@ public class NotificationToast extends ToastComponent implements ElevationEffect
         this.headerFont = headerFont;
         this.textFont = textFont;
         this.setText(text);
-        this.setHeader(text);
+        this.setHeader(header);
     }
     
     @Override

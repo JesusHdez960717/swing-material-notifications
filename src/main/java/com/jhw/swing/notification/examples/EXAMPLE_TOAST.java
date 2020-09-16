@@ -40,7 +40,7 @@ public class EXAMPLE_TOAST extends javax.swing.JFrame {
         vlc.add(new JButton(new AbstractAction("toast natification") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                NotificationFactory.buildNotificationTOAST(NotificationBuilder.builder().header("buajajaja").text("texting texting hua hua hua").color(MaterialColors.PURPLE_400).icon(MaterialIcons.BACKUP));
+                NotificationFactory.buildNotificationTOAST(NotificationBuilder.builder().text("texting texting hua hua hua").color(MaterialColors.PURPLE_400).icon(MaterialIcons.BACKUP));
             }
         }));
         vlc.add(new JButton(new AbstractAction("toast text") {

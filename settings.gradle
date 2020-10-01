@@ -1,12 +1,22 @@
-rootProject.name = 'Notifications'
+rootProject.name = 'swing-material-notifications'
 
-include ':utils', ':clean-core', ':clean-swing', ':derivable-icons', ':material-standards', ':material-personalization', 'material-swing', 'module-console', 'module-tec', 'module-bug', 'module-calc', 'module-default-config', 'module-licence', 'module-company', 'module-mysql'
+include ':clean-core-full'
+project(':clean-core-full').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\clean-core-full" as File
 
-project(':utils').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\Utils" as File
-project(':clean-core').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\CleanCoreFull" as File
-project(':clean-swing').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\CleanSwing" as File
+include ':clean-swing'
+project(':clean-swing').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\clean-swing" as File
 
-project(':derivable-icons').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\Material\\Derivable Icons" as File
-project(':material-standards').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\Material\\Standards" as File
-project(':material-personalization').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\Modulos Utils\\Personalization" as File
-project(':material-swing').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\MaterialSwing" as File
+include ':utils-core'
+project(':utils-core').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\utils-core" as File
+
+include ':swing-derivable_icons'
+project(':swing-derivable_icons').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-derivable_icons" as File
+
+include ':swing-material-standards'
+project(':swing-material-standards').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-standards" as File
+
+include ':module-util-personalization'
+project(':module-util-personalization').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\module-util-personalization" as File
+
+include ':swing-material-core'
+project(':swing-material-core').projectDir = "E:\\Trabajos\\Projects\\GIT Projects Gradle\\swing-material-core" as File

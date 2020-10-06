@@ -14,8 +14,8 @@ import org.jdesktop.core.animation.timing.interpolators.SplineInterpolator;
 import com.jhw.swing.util.SafePropertySetter;
 import com.jhw.swing.material.standards.MaterialColors;
 import com.jhw.swing.notification.NotificationLocation;
-import com.jhw.personalization.core.domain.Personalization;
-import com.jhw.personalization.services.PersonalizationHandler;
+import com.jhw.module.util.personalization.core.domain.Personalization;
+import com.jhw.module.util.personalization.services.PersonalizationHandler;
 import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.util.Utils;
 

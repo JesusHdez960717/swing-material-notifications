@@ -4,6 +4,8 @@ plugins {
 
 group = 'com.jhw.swing.material'
 
+version = '1.1.0.SNAPSHOT.20201228'
+
 repositories {
     jcenter()
     mavenCentral()

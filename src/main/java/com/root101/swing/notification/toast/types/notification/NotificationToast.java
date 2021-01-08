@@ -1,7 +1,23 @@
-package com.jhw.swing.notification.toast.types.notification;
+/*
+ * Copyright 2021 Root101 (jhernandezb96@gmail.com, +53-5-426-8660).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Or read it directly from LICENCE.txt file at the root of this project.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.root101.swing.notification.toast.types.notification;
 
-import com.jhw.swing.material.effects.DefaultElevationEffect;
-import com.jhw.swing.notification.toast.ToastComponent;
+import com.root101.swing.material.effects.DefaultElevationEffect;
+import com.root101.swing.notification.toast.ToastComponent;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -12,17 +28,18 @@ import java.awt.Graphics2D;
 import java.awt.geom.RoundRectangle2D;
 import java.util.StringTokenizer;
 import javax.swing.ImageIcon;
-import com.jhw.swing.material.effects.ElevationEffect;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.material.standards.MaterialShadow;
-import com.jhw.swing.util.MaterialDrawingUtils;
-import com.jhw.swing.util.Utils;
-import com.jhw.swing.derivable_icons.DerivableIcon;
+import com.root101.swing.material.effects.ElevationEffect;
+import com.root101.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.standards.MaterialShadow;
+import com.root101.swing.util.MaterialDrawingUtils;
+import com.root101.swing.util.Utils;
+import com.root101.swing.derivable_icons.DerivableIcon;
 
 /**
  *
- * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
+ * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
+ * @author JesusHdezWaterloo@Github
  */
 public class NotificationToast extends ToastComponent implements ElevationEffect {
 

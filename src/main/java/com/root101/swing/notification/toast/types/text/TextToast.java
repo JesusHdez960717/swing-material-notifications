@@ -1,14 +1,29 @@
-package com.jhw.swing.notification.toast.types.text;
+/*
+ * Copyright 2021 Root101 (jhernandezb96@gmail.com, +53-5-426-8660).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Or read it directly from LICENCE.txt file at the root of this project.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.root101.swing.notification.toast.types.text;
 
-import com.jhw.swing.notification.toast.ToastComponent;
+import com.root101.swing.notification.toast.ToastComponent;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
-import com.jhw.swing.material.effects.*;
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
-import com.jhw.swing.material.standards.MaterialShadow;
-import com.jhw.swing.util.MaterialDrawingUtils;
-import com.jhw.swing.util.Utils;
+import com.root101.swing.material.effects.*;
+import com.root101.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.material.standards.MaterialShadow;
+import com.root101.swing.util.MaterialDrawingUtils;
+import com.root101.swing.util.Utils;
 
 /**
  * A toast that contains textDisplay.
@@ -16,6 +31,9 @@ import com.jhw.swing.util.Utils;
  * @see <a
  * href="https://www.google.com/design/spec/components/snackbars-toasts.html">Snackbars
  * and toasts</a>
+ * 
+ * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
+ * @author JesusHdezWaterloo@Github
  */
 public class TextToast extends ToastComponent implements ElevationEffect {
 

@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.swing.material'
+group = 'com.root101.swing.material'
 
 version = '1.1.0.SNAPSHOT.20201228'
 
@@ -15,7 +15,7 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.13'
     
-    implementation project(':clean-core-full')
+    implementation project(':clean-core')
     implementation project(':clean-swing')
     
     implementation project(':utils-core')

@@ -1,6 +1,6 @@
 package com.jhw.swing.notification;
 
-import com.jhw.swing.util.Utils;
+import com.root101.swing.util.Utils;
 import java.awt.Component;
 
 /**

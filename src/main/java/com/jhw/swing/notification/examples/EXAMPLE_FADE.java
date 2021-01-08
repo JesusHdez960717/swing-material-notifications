@@ -5,12 +5,12 @@
  */
 package com.jhw.swing.notification.examples;
 
-import com.jhw.swing.material.components.container.layout.VerticalLayoutContainer;
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
+import com.root101.swing.material.standards.MaterialColors;
+import com.root101.swing.material.standards.MaterialIcons;
 import com.jhw.swing.notification.NotificationBuilder;
 import com.jhw.swing.notification.fade.DialogFade;
-import com.jhw.swing.ui.MaterialLookAndFeel;
+import com.root101.swing.ui.MaterialLookAndFeel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;

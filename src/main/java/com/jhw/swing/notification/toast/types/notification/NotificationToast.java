@@ -1,6 +1,6 @@
 package com.jhw.swing.notification.toast.types.notification;
 
-import com.jhw.swing.material.effects.DefaultElevationEffect;
+import com.root101.swing.material.effects.DefaultElevationEffect;
 import com.jhw.swing.notification.toast.ToastComponent;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -12,13 +12,13 @@ import java.awt.Graphics2D;
 import java.awt.geom.RoundRectangle2D;
 import java.util.StringTokenizer;
 import javax.swing.ImageIcon;
-import com.jhw.swing.material.effects.ElevationEffect;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.material.standards.MaterialShadow;
-import com.jhw.swing.util.MaterialDrawingUtils;
-import com.jhw.swing.util.Utils;
-import com.jhw.swing.derivable_icons.DerivableIcon;
+import com.root101.swing.material.effects.ElevationEffect;
+import com.root101.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.standards.MaterialShadow;
+import com.root101.swing.util.MaterialDrawingUtils;
+import com.root101.swing.util.Utils;
+import com.root101.swing.derivable_icons.DerivableIcon;
 
 /**
  *

@@ -1,15 +1,15 @@
 package com.jhw.swing.notification.fade;
 
-import com.jhw.swing.material.components.button.MaterialButtonsFactory;
-import com.jhw.swing.material.components.container.panel._MaterialPanelComponent;
-import com.jhw.swing.material.components.labels.MaterialLabel;
-import com.jhw.swing.material.components.labels.MaterialLabelsFactory;
-import com.jhw.swing.material.components.textarea.ContentArea;
-import com.jhw.swing.material.components.textarea.MaterialTextAreaFactory;
+import com.root101.swing.material.components.button.MaterialButtonsFactory;
+import com.root101.swing.material.components.container.panel._MaterialPanelComponent;
+import com.root101.swing.material.components.labels.MaterialLabel;
+import com.root101.swing.material.components.labels.MaterialLabelsFactory;
+import com.root101.swing.material.components.textarea.ContentArea;
+import com.root101.swing.material.components.textarea.MaterialTextAreaFactory;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

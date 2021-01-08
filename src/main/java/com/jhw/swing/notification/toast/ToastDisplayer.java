@@ -8,8 +8,8 @@ import javax.swing.*;
 import org.jdesktop.core.animation.timing.Animator;
 import org.jdesktop.core.animation.timing.TimingTargetAdapter;
 import org.jdesktop.core.animation.timing.interpolators.SplineInterpolator;
-import com.jhw.swing.util.SafePropertySetter;
-import com.jhw.swing.util.Utils;
+import com.root101.swing.util.SafePropertySetter;
+import com.root101.swing.util.Utils;
 
 /**
  * A bar that displays toasts.

@@ -3,12 +3,12 @@ package com.jhw.swing.notification.toast.types.text;
 import com.jhw.swing.notification.toast.ToastComponent;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
-import com.jhw.swing.material.effects.*;
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
-import com.jhw.swing.material.standards.MaterialShadow;
-import com.jhw.swing.util.MaterialDrawingUtils;
-import com.jhw.swing.util.Utils;
+import com.root101.swing.material.effects.*;
+import com.root101.swing.material.standards.MaterialColors;
+import com.root101.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.material.standards.MaterialShadow;
+import com.root101.swing.util.MaterialDrawingUtils;
+import com.root101.swing.util.Utils;
 
 /**
  * A toast that contains textDisplay.

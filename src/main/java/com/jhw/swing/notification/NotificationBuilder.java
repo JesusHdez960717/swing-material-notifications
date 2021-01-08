@@ -5,9 +5,9 @@
  */
 package com.jhw.swing.notification;
 
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.standards.MaterialColors;
+import com.root101.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.material.standards.MaterialIcons;
 import com.jhw.swing.notification.fade.DialogFade;
 import java.awt.Color;
 import java.awt.Font;

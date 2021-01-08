@@ -1,9 +1,9 @@
 package com.jhw.swing.notification.toast;
 
-import com.jhw.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.material.standards.MaterialFontRoboto;
 import javax.swing.*;
 import java.awt.*;
-import com.jhw.swing.util.MaterialDrawingUtils;
+import com.root101.swing.util.MaterialDrawingUtils;
 
 /**
  * A toast.

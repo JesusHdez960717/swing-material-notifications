@@ -1,4 +1,4 @@
-package com.jhw.swing.notification;
+package com.root101.swing.notification;
 
 import com.root101.swing.util.Utils;
 import java.awt.Component;

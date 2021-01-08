@@ -1,7 +1,7 @@
-package com.jhw.swing.notification.toast.types.text;
+package com.root101.swing.notification.toast.types.text;
 
-import com.jhw.swing.notification.toast.DialogToast;
-import com.jhw.swing.notification.NotificationBuilder;
+import com.root101.swing.notification.toast.DialogToast;
+import com.root101.swing.notification.NotificationBuilder;
 import java.awt.Color;
 import java.awt.Font;
 

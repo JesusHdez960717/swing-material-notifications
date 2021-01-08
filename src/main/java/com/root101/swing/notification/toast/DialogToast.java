@@ -1,4 +1,4 @@
-package com.jhw.swing.notification.toast;
+package com.root101.swing.notification.toast;
 
 import com.jhw.module.util.personalization.core.domain.Personalization;
 import com.jhw.module.util.personalization.services.PersonalizationHandler;
@@ -9,9 +9,9 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import com.root101.swing.material.standards.MaterialColors;
-import com.jhw.swing.notification.NotificationLocation;
-import static com.jhw.swing.notification.toast.ToastDisplayer.DURATION;
-import static com.jhw.swing.notification.toast.types.text.ToastTextGeneral.DISTANCE;
+import com.root101.swing.notification.NotificationLocation;
+import static com.root101.swing.notification.toast.ToastDisplayer.DURATION;
+import static com.root101.swing.notification.toast.types.text.ToastTextGeneral.DISTANCE;
 import com.root101.swing.util.SafePropertySetter;
 import com.root101.swing.util.Utils;
 import java.awt.BorderLayout;

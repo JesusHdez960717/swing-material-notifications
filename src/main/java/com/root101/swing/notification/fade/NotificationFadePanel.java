@@ -1,4 +1,4 @@
-package com.jhw.swing.notification.fade;
+package com.root101.swing.notification.fade;
 
 import com.root101.swing.material.components.button.MaterialButtonsFactory;
 import com.root101.swing.material.components.container.panel._MaterialPanelComponent;

@@ -1,7 +1,7 @@
-package com.jhw.swing.notification.toast.types.notification;
+package com.root101.swing.notification.toast.types.notification;
 
 import com.root101.swing.material.effects.DefaultElevationEffect;
-import com.jhw.swing.notification.toast.ToastComponent;
+import com.root101.swing.notification.toast.ToastComponent;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;

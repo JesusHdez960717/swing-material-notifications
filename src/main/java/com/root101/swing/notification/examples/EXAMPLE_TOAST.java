@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.swing.notification.examples;
+package com.root101.swing.notification.examples;
 
 import com.root101.swing.material.components.container.layout.VerticalLayoutContainer;
 import com.root101.swing.material.standards.MaterialColors;
 import com.root101.swing.material.standards.MaterialIcons;
-import com.jhw.swing.notification.NotificationBuilder;
-import com.jhw.swing.notification.NotificationFactory;
-import com.jhw.swing.notification.toast.types.notification.ToastNotificationGeneral;
-import com.jhw.swing.notification.toast.types.text.ToastTextGeneral;
+import com.root101.swing.notification.NotificationBuilder;
+import com.root101.swing.notification.NotificationFactory;
+import com.root101.swing.notification.toast.types.notification.ToastNotificationGeneral;
+import com.root101.swing.notification.toast.types.text.ToastTextGeneral;
 import com.root101.swing.ui.MaterialLookAndFeel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;

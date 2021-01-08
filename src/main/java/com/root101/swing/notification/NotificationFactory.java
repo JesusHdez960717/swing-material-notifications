@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.swing.notification;
+package com.root101.swing.notification;
 
-import com.jhw.swing.notification.toast.DialogToast;
-import com.jhw.swing.notification.toast.types.notification.ToastNotificationGeneral;
-import com.jhw.swing.notification.toast.types.text.ToastTextGeneral;
+import com.root101.swing.notification.toast.DialogToast;
+import com.root101.swing.notification.toast.types.notification.ToastNotificationGeneral;
+import com.root101.swing.notification.toast.types.text.ToastTextGeneral;
 
 /**
  *

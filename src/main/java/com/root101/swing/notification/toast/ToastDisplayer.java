@@ -1,4 +1,4 @@
-package com.jhw.swing.notification.toast;
+package com.root101.swing.notification.toast;
 
 import java.awt.event.*;
 import java.util.LinkedList;

@@ -1,9 +1,9 @@
-package com.jhw.swing.notification.toast.types.notification;
+package com.root101.swing.notification.toast.types.notification;
 
-import com.jhw.swing.notification.toast.DialogToast;
+import com.root101.swing.notification.toast.DialogToast;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import com.jhw.swing.notification.NotificationBuilder;
+import com.root101.swing.notification.NotificationBuilder;
 import java.awt.Font;
 
 /**

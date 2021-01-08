@@ -1,6 +1,6 @@
-package com.jhw.swing.notification.toast.types.text;
+package com.root101.swing.notification.toast.types.text;
 
-import com.jhw.swing.notification.toast.ToastComponent;
+import com.root101.swing.notification.toast.ToastComponent;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 import com.root101.swing.material.effects.*;

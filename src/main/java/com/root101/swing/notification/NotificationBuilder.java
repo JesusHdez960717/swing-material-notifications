@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.swing.notification;
+package com.root101.swing.notification;
 
 import com.root101.swing.material.standards.MaterialColors;
 import com.root101.swing.material.standards.MaterialFontRoboto;
 import com.root101.swing.material.standards.MaterialIcons;
-import com.jhw.swing.notification.fade.DialogFade;
+import com.root101.swing.notification.fade.DialogFade;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;

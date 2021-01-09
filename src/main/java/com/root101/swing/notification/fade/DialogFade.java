@@ -30,14 +30,14 @@ import org.jdesktop.core.animation.timing.interpolators.SplineInterpolator;
 import com.root101.swing.util.SafePropertySetter;
 import com.root101.swing.material.standards.MaterialColors;
 import com.root101.swing.notification.NotificationLocation;
-import com.jhw.module.util.personalization.core.domain.Personalization;
-import com.jhw.module.util.personalization.services.PersonalizationHandler;
+import com.root101.module.util.personalization.core.domain.Personalization;
+import com.root101.module.util.personalization.services.PersonalizationHandler;
 import com.root101.swing.notification.NotificationBuilder;
 import com.root101.swing.util.Utils;
 
 /**
  * USAR TOAST
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

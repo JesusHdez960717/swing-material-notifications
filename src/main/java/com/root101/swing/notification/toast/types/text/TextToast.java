@@ -31,7 +31,7 @@ import com.root101.swing.util.Utils;
  * @see <a
  * href="https://www.google.com/design/spec/components/snackbars-toasts.html">Snackbars
  * and toasts</a>
- * 
+ *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
  * @author JesusHdezWaterloo@Github
  */

@@ -63,7 +63,7 @@ public class NotificationToast extends ToastComponent implements ElevationEffect
 
     public NotificationToast(String header, Font headerFont, String text, Font textFont, Color background, ImageIcon icon) {
         super.setCursor(cursor);
-        
+
         this.elevation = DefaultElevationEffect.applyTo(this, MaterialShadow.ELEVATION_DEFAULT);
         this.setBorderRadius(5);
 
@@ -76,7 +76,7 @@ public class NotificationToast extends ToastComponent implements ElevationEffect
         this.setText(text);
         this.setHeader(header);
     }
-    
+
     @Override
     public int getBorderRadius() {
         return elevation.getBorderRadius();

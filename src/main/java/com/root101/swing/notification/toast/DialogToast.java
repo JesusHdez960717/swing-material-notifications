@@ -16,8 +16,8 @@
  */
 package com.root101.swing.notification.toast;
 
-import com.jhw.module.util.personalization.core.domain.Personalization;
-import com.jhw.module.util.personalization.services.PersonalizationHandler;
+import com.root101.module.util.personalization.core.domain.Personalization;
+import com.root101.module.util.personalization.services.PersonalizationHandler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JDialog;
@@ -50,7 +50,7 @@ public class DialogToast extends JDialog {
     public static DialogToast from(int duration, ToastComponent toast, int location) {
         return new DialogToast(duration, toast, location);
     }
-    
+
     //control de flujo e interaccion entre las notificaciones
     private Animator anim;//animator para mover cuando la de abajo se cierra
     private int nextY = 0;//y donde va a salir la proxima notificacion 

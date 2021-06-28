@@ -11,10 +11,7 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
-    testCompile 'junit:junit:4.13'
-    
     implementation project(':clean-core')
     implementation project(':clean-swing')
     
